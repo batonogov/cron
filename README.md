@@ -8,7 +8,7 @@ docker run \
     -it \
     --name cron \
     --restart unless-stopped \
-    -e CRON='* * * * * ping localhost'
+    -e CRON='* * * * * ping localhost' \
     -d \
     batonogov/cron
 ```
