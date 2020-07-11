@@ -12,3 +12,8 @@ docker run \
     -d \
     batonogov/cron
 ```
+
+**Логи**
+```
+cat /var/log/cron.log
+```
