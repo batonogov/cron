@@ -15,5 +15,8 @@ docker run \
 
 **Логи**
 ```
-cat /var/log/cron.log
+docker exec cron cat /var/log/cron.log
 ```
+
+[GitHub](https://github.com/batonogov/cron) | 
+[Docker Hub](https://hub.docker.com/repository/docker/batonogov/cron)
