@@ -1,21 +1,18 @@
 # CRON
 
-Cron внутри контейнера выполняет ваше задание переданное через переменную (Пример ниже).
+Cron внутри контейнера выполняет ваши задания переданные через файл scheduler.
 
 **Запуск:**
+
+Отредактируйте файл scheduler.
+
 ```
 docker run \
     -it \
     --name cron \
     --restart unless-stopped \
-    -e CRON='* * * * * ping localhost' \
     -d \
     batonogov/cron
-```
-
-**Логи:**
-```
-docker exec cron cat /var/log/cron.log
 ```
 
 [GitHub](https://github.com/batonogov/cron) | 
