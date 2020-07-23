@@ -8,6 +8,7 @@ RUN apt update && \
     apt clean
 
 COPY entrypoint.sh /
+COPY scheduler /
 
 RUN chmod +x /entrypoint.sh
 
