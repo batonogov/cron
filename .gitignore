@@ -1,2 +1,6 @@
-
-test.sh
+update.sh
+down.sh
+cron.logs/hourly*
+cron.logs/daily*
+cron.logs/weekly*
+cron.logs/monthly*
