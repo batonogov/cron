@@ -3,8 +3,7 @@ BASH_ENV=/container.env
 MAILTO=root
 HOME=/
 
-@reboot mkdir reboot
-@hourly mkdir hourly
-@daily mkdir daily
-@weekly mkdir weekly
-@monthly mkdir monthly
+@hourly bash hourly.sh
+@daily bash daily.sh
+@weekly bash weekly.sh
+@monthly bash monthly.sh
