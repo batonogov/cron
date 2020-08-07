@@ -19,6 +19,10 @@ COPY scripts/daily.sh /
 COPY scripts/weekly.sh /
 COPY scripts/monthly.sh /
 
+ENV LANG ru_RU.UTF-8  
+ENV LANGUAGE ru_RU:ru  
+ENV LC_ALL ru_RU.UTF-8 
+
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT /entrypoint.sh
