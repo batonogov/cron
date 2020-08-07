@@ -1,19 +1,27 @@
 # CRON
 
-Cron внутри контейнера выполняет ваши задания переданные через файл scheduler.
+Cron внутри контейнера выполняет ваши задания из папок cron*.
 
 **Запуск:**
 
-Отредактируйте файл scheduler.
+Установка необходимых пакетов в dockerfile
+```
+apt install \
+    cron \
+    tzdata \
+    locales \
+    -y && \
+```
+
+Запуск
+```
+bash up.sh
+```
+
+**Остановка:**
 
 ```
-docker run \
-    -it \
-    --name cron \
-    --restart unless-stopped \
-    -d \
-    batonogov/cron
+bash down.sh
 ```
 
 [GitHub](https://github.com/batonogov/cron) | 
-[Docker Hub](https://hub.docker.com/repository/docker/batonogov/cron)
