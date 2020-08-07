@@ -3,7 +3,6 @@ services:
   cron:
     build: .
     container_name: cron
-    privileged: true
     volumes:
       - ./cron.hourly:/etc/cron.hourly
       - ./cron.daily:/etc/cron.daily
