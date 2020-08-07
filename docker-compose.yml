@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  backup:
+    image: batonogov/cron
+    # build: . # Вместо image для сборки образа из dockerfile
+    container_name: cron
+    privileged: true
+    volumes:
+      - ./cron.hourly:/etc/cron.hourly
+      - ./cron.daily:/etc/cron.daily
+      - ./cron.weekly:/etc/cron.weekly
+      - ./cron.monthly:/etc/cron.monthly
+      - ./cron.logs:/var/log/cron
+    restart: unless-stopped:0
