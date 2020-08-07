@@ -1,8 +1,7 @@
 version: '3.8'
 services:
-  backup:
-    image: batonogov/cron
-    # build: . # Вместо image для сборки образа из dockerfile
+  cron:
+    build: .
     container_name: cron
     privileged: true
     volumes:
