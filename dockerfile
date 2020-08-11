@@ -18,6 +18,7 @@ COPY scripts/hourly.sh /
 COPY scripts/daily.sh /
 COPY scripts/weekly.sh /
 COPY scripts/monthly.sh /
+COPY scripts/reboot.sh /
 
 ENV LANG ru_RU.UTF-8  
 ENV LANGUAGE ru_RU:ru  
