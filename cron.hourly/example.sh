@@ -1,1 +1,1 @@
-echo $(date)
+echo cron.hourly работает

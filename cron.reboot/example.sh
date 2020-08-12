@@ -1,1 +1,1 @@
-echo $(date)
+echo cron.reboot работает
