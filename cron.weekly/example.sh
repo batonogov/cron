@@ -1,1 +1,0 @@
-echo cron.weekly работает

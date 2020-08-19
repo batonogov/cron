@@ -1,1 +1,0 @@
-echo cron.hourly работает
