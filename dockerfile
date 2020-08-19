@@ -14,7 +14,6 @@ RUN apt update && \
 
 COPY entrypoint.sh /
 COPY scheduler /
-COPY scheduler /
 COPY scripts/hourly.sh /
 COPY scripts/daily.sh /
 COPY scripts/weekly.sh /
