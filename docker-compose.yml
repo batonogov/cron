@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  cron:
+  daemon:
     build: .
     container_name: cron
     volumes:
