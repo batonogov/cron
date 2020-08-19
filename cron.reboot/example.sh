@@ -1,1 +1,1 @@
-echo cron.reboot работает
+echo Hello World
