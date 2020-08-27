@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:10-slim
 
 RUN apt update && \
     apt upgrade -y && \
