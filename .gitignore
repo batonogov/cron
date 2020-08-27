@@ -3,3 +3,4 @@ cron.hourly/*
 cron.daily/*
 cron.weekly/*
 cron.monthly/*
+clean.sh
