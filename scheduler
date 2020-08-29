@@ -1,7 +1,7 @@
 SHELL=/bin/bash
-BASH_ENV=/container.env
+BASH_ENV=/usr/local/cron/container.env
 MAILTO=root
-HOME=/
+HOME=/usr/local/cron/
 
 @reboot bash reboot.sh
 @hourly bash hourly.sh
