@@ -10,4 +10,6 @@ services:
       - ./cron.monthly:/etc/cron.monthly
       - ./cron.reboot:/etc/cron.reboot
       - ./logs:/var/log/cron
+    env_file:
+      - main.env
     restart: unless-stopped:0
