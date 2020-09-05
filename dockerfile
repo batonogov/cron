@@ -14,4 +14,8 @@ RUN apt update && \
 
 COPY scripts/* /usr/local/cron/
 
+ENV LANG ru_RU.UTF-8
+ENV LANGUAGE ru_RU:ru
+ENV LC_ALL ru_RU.UTF-8
+
 ENTRYPOINT bash /usr/local/cron/entrypoint.sh
