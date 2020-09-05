@@ -14,4 +14,4 @@ RUN apt update && \
 
 COPY scripts/* /usr/local/cron/
 
-ENTRYPOINT  bash /usr/local/cron/entrypoint.sh
+ENTRYPOINT bash /usr/local/cron/entrypoint.sh
