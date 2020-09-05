@@ -1,4 +1,4 @@
-FROM debian:10-slim
+FROM openjdk:16-slim-buster
 
 RUN apt update && \
     apt upgrade \
