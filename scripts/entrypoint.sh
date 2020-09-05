@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Docker конетнер запущен"
+echo "Docker контейнер запущен"
 
 declare -p | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /usr/local/cron/container.env
 
