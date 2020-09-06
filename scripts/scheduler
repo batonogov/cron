@@ -3,7 +3,6 @@ BASH_ENV=/usr/local/cron/container.env
 MAILTO=root
 HOME=/usr/local/cron/
 
-@reboot bash reboot.sh
 @hourly bash hourly.sh
 @daily bash daily.sh
 @weekly bash weekly.sh
