@@ -1,5 +1,7 @@
 FROM debian:10-slim
 
+LABEL maintainer="batonogov@icloud.com"
+
 RUN apt update && \
     apt upgrade && \
     apt install \
