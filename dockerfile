@@ -1,7 +1,8 @@
 FROM openjdk:16-slim-buster
 
+LABEL maintainer="batonogov@icloud.com"
+
 RUN apt update && \
-    apt upgrade && \
     apt install \
         cron \
         tzdata \
@@ -9,8 +10,7 @@ RUN apt update && \
         python3 \
         -y && \
     cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
-    sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen \
-    apt clean
+    sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 
 COPY scripts/* /usr/local/cron/
 
