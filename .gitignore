@@ -1,6 +1,4 @@
 logs/*
-cron.hourly/*
-cron.daily/*
-cron.weekly/*
-cron.monthly/*
+cron.*
+!cron.reboot/
 clean.sh
