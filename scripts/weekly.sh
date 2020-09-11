@@ -1,23 +1,27 @@
-for file in /etc/cron.weekly/*.sh
+path=/var/log/cron/weekly
+
+cd /etc/cron.weekly/
+
+for file in *.sh
 do  
-    if [[ "$file" = "/etc/cron.weekly/*.sh" ]]
+    if [[ "$file" = "*.sh" ]]
     then
         echo "$file"
     else
-        echo $(date) >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1; 
-        bash "$file" >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1 &;
+        echo $(date) >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
+        echo "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
+        bash "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1 &
     fi
 done
 
-for file in /etc/cron.weekly/*.py
+for file in *.py
 do 
-    if [[ "$file" = "/etc/cron.weekly/*.py" ]]
+    if [[ "$file" = "*.py" ]]
     then
         echo "$file"
     else
-        echo $(date) >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1; 
-        python3 "$file" >> /var/log/cron/weekly-$(date +"%Y-%m-%d").log 2>&1 &;
+        echo $(date) >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
+        echo "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1; 
+        python3 "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1 &
     fi
 done
