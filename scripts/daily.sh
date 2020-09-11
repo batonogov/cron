@@ -6,7 +6,7 @@ do
     else
         echo $(date) >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
         echo "$file" >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1; 
-        bash "$file" >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
+        bash "$file" & >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
     fi
 done
 
@@ -18,6 +18,6 @@ do
     else
         echo $(date) >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
         echo "$file" >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1; 
-        python3 "$file" >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
+        python3 "$file" & >> /var/log/cron/daily-$(date +"%Y-%m-%d").log 2>&1;
     fi
 done
