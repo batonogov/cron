@@ -10,4 +10,4 @@ services:
       - ./cron.monthly:/etc/cron.monthly
       - ./cron.reboot:/etc/cron.reboot
       - ./logs:/var/log/cron
-    restart: unless-stopped:0
+    restart: always
