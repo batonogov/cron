@@ -1,4 +1,3 @@
 logs/*
 cron.*
 !cron.reboot/
-clean.sh
