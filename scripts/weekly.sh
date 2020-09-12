@@ -8,9 +8,10 @@ do
     then
         echo "$file"
     else
-        echo $(date) >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
-        bash "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1 &
+        mkdir $path
+        echo $(date) >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
+        echo "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
+        bash "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1 &
     fi
 done
 
@@ -20,8 +21,9 @@ do
     then
         echo "$file"
     else
-        echo $(date) >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1; 
-        python3 "$file" >> $path-${file}-$(date +"%Y-%m-%d").log 2>&1 &
+        mkdir $path
+        echo $(date) >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
+        echo "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1; 
+        python3 "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1 &
     fi
 done
