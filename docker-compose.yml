@@ -3,6 +3,8 @@ services:
   daemon:
     build: .
     container_name: cron
+    env_file:
+      - main.env
     volumes:
       - ./cron.hourly:/etc/cron.hourly
       - ./cron.daily:/etc/cron.daily
