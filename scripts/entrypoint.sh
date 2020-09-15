@@ -8,7 +8,6 @@ else
     cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 fi
 
-
 bash reboot.sh
 
 declare -p | grep -Ev 'BASHOPTS|BASH_VERSINFO|EUID|PPID|SHELLOPTS|UID' > /usr/local/cron/container.env
