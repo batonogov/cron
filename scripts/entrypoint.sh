@@ -2,7 +2,12 @@
 
 echo "Docker контейнер запущен"
 
-cp /usr/share/zoneinfo/${localtime} /etc/localtime
+if [ -n "$localtime" ]; then
+    cp /usr/share/zoneinfo/${localtime} /etc/localtime
+else
+    cp /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+fi
+
 
 bash reboot.sh
 
