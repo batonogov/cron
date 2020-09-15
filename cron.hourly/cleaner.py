@@ -9,7 +9,8 @@ for root, dirs, files in os.walk('.', topdown = False):
       file_name = os.path.join(root, name)
       now = time.time()
       mtime = os.path.getmtime(file_name)
-      if now - mtime > (7 * 86400):
+      # if now - mtime > (7 * 86400):
+      if now - mtime > (60 * 60):
           os.remove(file_name)
           print('Удалил', file_name)
    for name in dirs:
