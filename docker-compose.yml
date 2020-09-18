@@ -1,4 +1,4 @@
-version: '2.0'
+version: '3'
 services:
   daemon:
     build: .
@@ -11,5 +11,6 @@ services:
       - ./cron.weekly:/etc/cron.weekly
       - ./cron.monthly:/etc/cron.monthly
       - ./cron.reboot:/etc/cron.reboot
+      - ./cron.start:/etc/cron.start
       - ./logs:/var/log/cron
     restart: always
