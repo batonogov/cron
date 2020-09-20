@@ -26,3 +26,34 @@ docker-compose down
 - dockerfile - dockerfile для сборки образа zabbix-backup
 - LICENSE.md - Лицензия
 - main.env - Переменные передаваемые в контейнер при создании
+
+
+
+# CRON
+
+Cron inside the container performs your tasks .sh and .py from the cron * folders.
+
+### Launch:
+
+``
+docker-compose up --build-d
+``
+
+# # # Stop:
+
+``
+docker-compose down
+``
+
+# # # App structure:
+
+- cron. daily/ - Daily tasks
+- cron. hourly / - Hourly tasks
+- cron. monthly / - Monthly tasks
+- cron. reboot/ - Tasks performed once at the first start
+- cron.start/ Tasks to be performed at every startup
+- cron.weekly / - Weekly tasks
+- docker-compose.yml-docker-compose file
+- dockerfile-dockerfile for building a zabbix-backup image
+- LICENSE.md -License
+- main. env-Variables passed to the container during creation
