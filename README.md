@@ -36,7 +36,7 @@ Cron inside the container performs your tasks .sh and .py from the cron* folders
 ### Launch:
 
 ``
-docker-compose up --build-d
+docker-compose up --build -d
 ``
 
 ### Stop:
