@@ -1,29 +1,48 @@
-path=/var/log/cron/start
+logs=/var/log/cron/start
+path=/etc/cron.start
 
-cd /etc/cron.start/
+# Создание директорий в случае их отсутсвия
+if ! [ -d $path ]
+then
+    mkdir $path
+fi
 
-for file in *.sh
-do  
-    if [[ "$file" = "*.sh" ]]
-    then
-        echo "$file"
-    else
-        mkdir $path
-        echo $(date) >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
-        bash "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1 &
-    fi
-done
+if ! [ -d $logs ]
+then
+    mkdir $logs
+fi
 
-for file in *.py
-do 
-    if [[ "$file" = "*.py" ]]
-    then
-        echo "$file"
-    else
-        mkdir $path
-        echo $(date) >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1;
-        echo "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1; 
-        python3 "$file" >> $path/${file}-$(date +"%Y-%m-%d").log 2>&1 &
-    fi
-done
+# Проверка наличия скриптов в папке и их выполнение
+if ! [ `ls $path | wc -l` -eq 0 ] 
+then
+    cd $path
+
+    for file in *.sh
+    do  
+        if [[ "$file" = "*.sh" ]]
+        then
+            echo "$file"
+        else
+            mkdir $logs
+            echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
+            echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
+            bash "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
+        fi
+    done
+
+    for file in *.py
+    do 
+        if [[ "$file" = "*.py" ]]
+        then
+            echo "$file"
+        else
+            mkdir $logs
+            echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
+            echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1; 
+            python3 "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
+        fi
+    done
+else
+    echo $(date) >> $logs/system-$(date +"%Y-%m-%d").log 2>&1;
+    echo Папка $path пуста >> $logs/system-$(date +"%Y-%m-%d").log 2>&1
+fi

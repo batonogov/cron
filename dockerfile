@@ -10,6 +10,8 @@ RUN apt update && \
         python3 \
         -y && \
     sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+    
+RUN rm /etc/cron.daily/*
 
 COPY scripts/* /usr/local/cron/
 
@@ -19,4 +21,4 @@ ENV LC_ALL ru_RU.UTF-8
 
 WORKDIR /usr/local/cron/
 
-ENTRYPOINT bash /usr/local/cron/entrypoint.sh
+ENTRYPOINT bash entrypoint.sh
