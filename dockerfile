@@ -1,4 +1,4 @@
-FROM debian:10-slim
+FROM postgres:13
 
 LABEL maintainer="batonogov@icloud.com"
 
