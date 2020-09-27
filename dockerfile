@@ -1,4 +1,4 @@
-FROM debian:10-slim
+FROM golang:1.15
 
 LABEL maintainer="batonogov@icloud.com"
 
