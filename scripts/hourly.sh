@@ -7,14 +7,14 @@ then
     mkdir $path
 fi
 
-if ! [ -d $logs ]
-then
-    mkdir $logs
-fi
-
 # Проверка наличия скриптов в папке и их выполнение
 if ! [ `ls $path | wc -l` -eq 0 ] 
 then
+    if ! [ -d $logs ]
+    then
+        mkdir $logs
+    fi
+
     cd $path
 
     for file in *.sh
@@ -23,7 +23,6 @@ then
         then
             echo "$file"
         else
-            mkdir $logs
             echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
             echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
             bash "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
@@ -36,13 +35,9 @@ then
         then
             echo "$file"
         else
-            mkdir $logs
             echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
             echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1; 
             python3 "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
         fi
     done
-else
-    echo $(date) >> $logs/system-$(date +"%Y-%m-%d").log 2>&1;
-    echo Папка $path пуста >> $logs/system-$(date +"%Y-%m-%d").log 2>&1
 fi
