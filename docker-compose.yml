@@ -6,11 +6,11 @@ services:
     env_file:
       - main.env
     volumes:
-      - ./cron.hourly:/etc/cron.hourly
-      - ./cron.daily:/etc/cron.daily
-      - ./cron.weekly:/etc/cron.weekly
-      - ./cron.monthly:/etc/cron.monthly
-      - ./cron.reboot:/etc/cron.reboot
-      - ./cron.start:/etc/cron.start
-      - ./logs:/var/log/cron
+      - ./cron/hourly:/etc/cron.hourly
+      - ./cron/daily:/etc/cron.daily
+      - ./cron/weekly:/etc/cron.weekly
+      - ./cron/monthly:/etc/cron.monthly
+      - ./cron/reboot:/etc/cron.reboot
+      - ./cron/start:/etc/cron.start
+      - ./cron/logs:/var/log/cron
     restart: always
