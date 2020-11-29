@@ -2,3 +2,4 @@ logs
 cron.*
 !cron.reboot/
 !cron.hourly/
+.DS_Store
