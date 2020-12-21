@@ -1,5 +1,5 @@
 logs
-cron.*
-!cron.reboot/
-!cron.hourly/
+cron/
+!cron/reboot/
+!cron/hourly/
 .DS_Store
