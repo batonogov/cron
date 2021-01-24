@@ -1,8 +1,15 @@
 version: '3.5'
+
+networks:
+  cron:
+    name: cron
+
 services:
-  daemon:
+  cron:
     build: .
     container_name: cron
+    networks:
+      - cron
     env_file:
       - main.env
     volumes:
