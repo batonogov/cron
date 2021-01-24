@@ -1,4 +1,4 @@
-FROM debian:10-slim
+FROM debian
 
 LABEL maintainer="batonogov@icloud.com"
 
