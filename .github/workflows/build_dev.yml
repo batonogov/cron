@@ -28,4 +28,4 @@ jobs:
         with:
           push: true
           tags: batonogov/cron:dev
-          file: Dockerfile-py3-win64
+          file: dockerfile
