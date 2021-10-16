@@ -1,16 +1,18 @@
-FROM debian
+FROM debian:11
 
 LABEL maintainer="batonogov@icloud.com"
 
-RUN apt update && \
-    apt install \
+RUN apt update
+
+RUN apt install \
         cron \
         tzdata \
         locales \
         python3 \
-        -y && \
-    sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
-    
+        -y 
+
+RUN sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+
 RUN rm /etc/cron.daily/*
 
 COPY scripts/* /usr/local/cron/
