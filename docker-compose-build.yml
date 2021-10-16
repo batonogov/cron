@@ -6,7 +6,7 @@ networks:
 
 services:
   cron:
-    image: batonogov/cron
+    build: .
     container_name: cron
     networks:
       - cron
