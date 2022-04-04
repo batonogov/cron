@@ -27,8 +27,6 @@ docker-compose down
 - LICENSE.md - Лицензия
 - main.env - Переменные передаваемые в контейнер при создании
 
-
-
 # CRON
 
 Cron inside the container performs your tasks .sh and .py from the cron* folders.
