@@ -2,8 +2,9 @@ FROM debian:11
 
 LABEL maintainer="batonogov@icloud.com"
 
-RUN apt update \
-        install \
+RUN apt update
+
+RUN apt install \
         cron \
         tzdata \
         locales \
