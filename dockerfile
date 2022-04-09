@@ -2,14 +2,13 @@ FROM debian:11
 
 LABEL maintainer="batonogov@icloud.com"
 
-RUN apt update
-
-RUN apt install \
+RUN apt update \
+        install \
         cron \
         tzdata \
         locales \
         python3 \
-        -y 
+        -y
 
 RUN sed -i -e 's/# ru_RU.UTF-8 UTF-8/ru_RU.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
 
