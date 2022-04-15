@@ -25,7 +25,7 @@ then
         else
             echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
             echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
-            bash "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
+            bash "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1
         fi
     done
 
@@ -37,7 +37,7 @@ then
         else
             echo $(date) >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1;
             echo "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1; 
-            python3 "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1 &
+            python3 "$file" >> $logs/${file}-$(date +"%Y-%m-%d").log 2>&1
         fi
     done
 fi
