@@ -1,6 +1,6 @@
 FROM debian:11
 
-LABEL maintainer="batonogov@icloud.com"
+LABEL maintainer="f.batonogov@yandex.ru"
 
 RUN apt update
 
