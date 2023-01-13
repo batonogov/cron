@@ -2,19 +2,19 @@
 
 Cron внутри контейнера выполняет ваши задания .sh и .py из папки cron/.
 
-### Запуск:
+## Запуск
 
-```
+```bash
 docker compose up -d
 ```
 
-### Остановка:
+## Остановка
 
-```
+```bash
 docker compose down
 ```
 
-### Структура приложения:
+## Структура приложения
 
 - cron/daily/ - Ежедневные задания
 - cron/hourly/ - Ежечасные задания
@@ -31,19 +31,19 @@ docker compose down
 
 Cron inside the container performs your tasks .sh and .py from the cron* folders.
 
-### Launch:
+## Launch
 
-``
+```bash
 docker-compose up --build -d
-``
+```
 
-### Stop:
+## Stop
 
-``
+```bash
 docker-compose down
-``
+```
 
-### App structure:
+## App structure
 
 - cron/daily/ - Daily tasks
 - cron/hourly / - Hourly tasks
